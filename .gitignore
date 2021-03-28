@@ -1,4 +1,4 @@
 #ignore object files
 *.a
-geom
-geometry
+*.d
+*.o

@@ -1,8 +1,5 @@
-#include <ctype.h>
 #include <libgeometry/library.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
+
 #define N 30
 int main()
 {
@@ -68,9 +65,9 @@ int main()
                             }
                         }
                     }
-                    radius = atoi(array_for_numbers_of_radius);
-                    area = M_PI * radius * radius;
-                    perimetr = 2 * M_PI * radius;
+                    radius = atof(array_for_numbers_of_radius);
+                    area = area1(radius);
+                    perimetr = perimetr1(radius);
                     printf("\n");
                     for (int i = 0; i < N; i++) {
                         printf("%c", array[i]);

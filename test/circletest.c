@@ -1,11 +1,10 @@
-#include "libgeometry/library.h"
 #include "ctest.h"
+#include "libgeometry/library.h"
 
 // CTEST(suite, system_testing)
 // {
 //     ASSERT_EQUAL(1 + 2, 3);
 // }
-
 
 CTEST(area_search, area_1)
 {
@@ -314,7 +313,6 @@ CTEST(datacheck, incorrect_data_bracket)
 
     ASSERT_EQUAL(exp, real);
 }
-
 
 CTEST(datacheck, incorrect_data_minus)
 {

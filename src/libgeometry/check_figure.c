@@ -8,7 +8,7 @@ int name(char* array)
     int a = 0;
     for (int i = 0; i < 6; i++) {
         if (array[i] != name_of_the_shape[i]) {
-            a++;
+            a = 1;
             break;
         }
     }
@@ -21,7 +21,7 @@ int check_space_1(char* array)
         if (array[i] == '(') {
             for (int v = i; array[v] != ','; v++) {
                 if (array[v] == ' ') {
-                    ++b;
+                    b = 1;
                     break;
                 }
             }
@@ -35,7 +35,7 @@ int check_space_2(char* array)
     int c = 0;
     for (int i = 6; i < 14; i++) {
         if ((array[i] == ',') && (array[i + 1] != ' ')) {
-            c++;
+            c = 1;
             break;
         }
     }
@@ -61,4 +61,13 @@ int check_in_parenthes(char* array)
         }
     }
     return z;
+}
+float area1(float radius)
+{
+    return (M_PI * radius * radius);
+}
+
+float perimetr1(float radius)
+{
+    return (2 * M_PI * radius);
 }

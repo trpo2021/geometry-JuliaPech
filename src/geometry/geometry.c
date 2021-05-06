@@ -7,21 +7,22 @@ int main()
     float radius = 0, x = 0, y = 0;
     float area = 0, perimetr = 0;
     int n; // кол-во кругов
-    
+
     FILE* pointer = NULL;
 
     pointer = fopen("circle1.txt", "r");
     if (!pointer) {
         printf("Can`t open the file\n");
     } else {
-        while (!feof(pointer)){
+        while (!feof(pointer)) {
             char array_for_numbers_of_radius[N] = {0};
             char array_for_numbers_of_x[N] = {0};
             char array_for_numbers_of_y[N] = {0};
             char array[N] = {0};
             fgets(array, N, pointer);
             printf("\n");
-            int space2 = 0; // Проверка на пробелы после запятой пред значением радиуса
+            int space2 = 0; // Проверка на пробелы после запятой пред значением
+                            // радиуса
             int space = 0;  // Проверка на разделение x и y
             int brackets = 0;
 
@@ -37,45 +38,43 @@ int main()
                     printf("%c", array[i]);
                 }
                 printf("Divide x and y\n");
-            } 
-            else 
-            {
+            } else {
                 if (space2 >= 1) {
                     for (int i = 0; i < N; i++) {
                         printf("%c", array[i]);
                     }
                     printf("error\n");
-                } else 
-                {
+                } else {
                     if (brackets >= 1) {
                         for (int i = 0; i < N; i++) {
                             printf("%c", array[i]);
                         }
-                    printf("error in brackets\n");
-                    } else 
-                    {
+                        printf("error in brackets\n");
+                    } else {
                         if (name_figure >= 1) {
                             for (int i = 0; i < N; i++) {
                                 printf("%c", array[i]);
                             }
                             printf("incorrect name\n");
-                        } else 
-                        {
+                        } else {
                             for (int i = 0; i < N; i++) {
-                                if ((array[i] == ',') && (array[i + 1] == ' ')) {
+                                if ((array[i] == ',')
+                                    && (array[i + 1] == ' ')) {
                                     for (int k = i; array[k + 1] != ')'; k++) {
                                         array_for_numbers_of_radius[k - i]
-                                        = array[k + 1];
+                                                = array[k + 1];
                                     }
                                 }
                                 if (array[i] == '(') {
                                     for (int k = i; array[k + 1] != ' '; k++) {
-                                        array_for_numbers_of_x[k - i] = array[k + 1];
+                                        array_for_numbers_of_x[k - i]
+                                                = array[k + 1];
                                     }
                                 }
                                 if (array[i] == ' ') {
                                     for (int k = i - 1; array[k] != ','; k++) {
-                                        array_for_numbers_of_y[k - i] = array[k];
+                                        array_for_numbers_of_y[k - i]
+                                                = array[k];
                                     }
                                 }
                             }
@@ -100,11 +99,11 @@ int main()
                     }
                 }
             }
-        }   
+        }
         printf("\n");
         intersects(n, array_circle);
-    }    
+    }
     fclose(pointer);
-    
+
     return 0;
 }

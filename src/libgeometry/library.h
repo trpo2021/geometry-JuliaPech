@@ -6,7 +6,7 @@
 
 struct circle {
     float x;
-    float y; 
+    float y;
     float radius;
 };
 

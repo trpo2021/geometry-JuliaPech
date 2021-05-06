@@ -78,7 +78,8 @@ void intersects(int n, struct circle* array_circle)
         for (int j = i + 1; j < n + 1; j++) {
             int w = fabs(array_circle[i].x - array_circle[j].x);
             int q = fabs(array_circle[i].y - array_circle[j].y);
-            if (sqrt(w * w + q * q) <= (array_circle[i].radius + array_circle[j].radius)) {
+            if (sqrt(w * w + q * q)
+                <= (array_circle[i].radius + array_circle[j].radius)) {
                 printf("Circle %d intersects Circle %d \n", i, j);
             }
         }
